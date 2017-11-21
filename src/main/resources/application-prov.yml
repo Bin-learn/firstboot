@@ -1,0 +1,7 @@
+server:
+  port: 8081
+  context-path: /first
+
+student:
+  age: 15
+  height: 160
