@@ -2,15 +2,14 @@ package com.bin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by  bin
  * Time： 2017/11/21.
  */
 @RestController
+@RequestMapping("/say")
 public class HelloBoot {
 
 //    @Value("${age}")
@@ -19,8 +18,9 @@ public class HelloBoot {
     @Autowired
     private student student;
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET )
-    public String hello(){
-        return student.getAge()+" "+student.getHeight();
+    @GetMapping({"/hello", "/hi"})
+    public String hello(@RequestParam(value="id", defaultValue = "0") Integer id){
+
+        return "id:"+id;
     }
 }
