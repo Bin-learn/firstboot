@@ -9,14 +9,14 @@ import javax.persistence.Id;
  * Time： 2017/11/22.
  */
 @Entity
-public class teacher {
+public class Teacher {
     @Id
     @GeneratedValue
     private Integer id;
 
     private String name;
 
-    public teacher() {
+    public Teacher() {
     }
 
     public Integer getId() {
